@@ -28,4 +28,7 @@ public class LectureCompletion {
     @JoinColumn(name = "lecture_id")
     private Lecture lecture;
 
+    @Column(name = "is_complete")
+    private Boolean isComplete;
+
 }

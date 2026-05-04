@@ -21,4 +21,7 @@ public class Lecture {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    @Column(name = "youtube_link")
+    private String youtubeLink;
+
 }

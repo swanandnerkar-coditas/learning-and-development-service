@@ -35,4 +35,9 @@ public class EmployeeDetails {
     @OneToMany(mappedBy = "employeeDetails")
     @Column(name = "assignment_id")
     private List<Assignment> assignments;
+
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

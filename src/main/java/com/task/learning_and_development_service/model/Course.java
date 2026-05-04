@@ -32,6 +32,6 @@ public class Course {
     @Column(name = "assignment_id")
     private List<Assignment> assignments;
 
-    @OneToMany(mappedBy = "courses")
+    @OneToMany(mappedBy = "course")
     private List<Lecture> lectures;
 }
