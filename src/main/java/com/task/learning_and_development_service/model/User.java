@@ -25,6 +25,9 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
+    @Column(unique = true)
+    private String email;
+
     private Integer experience;
 
     @CreatedDate
