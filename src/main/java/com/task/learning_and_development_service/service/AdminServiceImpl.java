@@ -21,7 +21,7 @@ public class AdminServiceImpl implements AdminService{
             userRepository.save(user);
         }
         catch (Exception ignored){
-            // throw custom exception form here
+            // throw custom exception form here and put message
             return "Failed to Register";
         }
 
