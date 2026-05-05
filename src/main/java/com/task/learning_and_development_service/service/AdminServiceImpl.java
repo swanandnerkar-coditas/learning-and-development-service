@@ -2,6 +2,7 @@ package com.task.learning_and_development_service.service;
 
 import com.task.learning_and_development_service.dto.request.CourseRequestDTO;
 import com.task.learning_and_development_service.dto.request.UserRequestDTO;
+import com.task.learning_and_development_service.dto.response.AdminProfileDTO;
 import com.task.learning_and_development_service.mapper.CourseMapper;
 import com.task.learning_and_development_service.mapper.UserMapper;
 import com.task.learning_and_development_service.model.Course;
@@ -57,5 +58,12 @@ public class AdminServiceImpl implements AdminService{
             throw new RuntimeException(e);
         }
         return "Course Registered Successfully with : " + count + " lectures";
+    }
+
+    @Override
+    public AdminProfileDTO profile() {
+
+
+        return null;
     }
 }
