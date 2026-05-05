@@ -30,4 +30,6 @@ public class Assignment {
     @Column(name = "assignment_status")
     private AssignmentStatus assignmentStatus;
 
+    @Column(name = "github_link", nullable = false)
+    private String gitHubLink;
 }

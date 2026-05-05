@@ -1,6 +1,7 @@
 package com.task.learning_and_development_service.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Lecture {
 
     @Id
@@ -24,4 +26,8 @@ public class Lecture {
     @Column(name = "youtube_link")
     private String youtubeLink;
 
+    public Lecture(Course course, String link) {
+        this.course = course;
+        this.youtubeLink = link;
+    }
 }

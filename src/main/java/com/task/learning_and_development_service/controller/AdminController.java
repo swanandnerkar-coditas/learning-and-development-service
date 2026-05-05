@@ -1,5 +1,6 @@
 package com.task.learning_and_development_service.controller;
 
+import com.task.learning_and_development_service.dto.request.CourseRequestDTO;
 import com.task.learning_and_development_service.dto.request.UserRequestDTO;
 import com.task.learning_and_development_service.dto.response.ApplicationResponse;
 import com.task.learning_and_development_service.service.AdminService;
@@ -20,10 +21,17 @@ public class AdminController {
 
     private final AdminService adminService;
 
-    @PostMapping
+    @PostMapping("/register-user")
     ResponseEntity<ApplicationResponse<String>> registerUser(@Valid @RequestBody UserRequestDTO userRequestDTO){
 
         ApplicationResponse<String> response = new ApplicationResponse<>(adminService.registerUser(userRequestDTO));
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/create-course")
+    ResponseEntity<ApplicationResponse<String>> createCourse(@Valid @RequestBody CourseRequestDTO courseRequestDTO){
+
+        ApplicationResponse<String> response = new ApplicationResponse<>(adminService.createCourse(courseRequestDTO));
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }

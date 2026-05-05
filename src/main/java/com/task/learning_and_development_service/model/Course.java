@@ -1,9 +1,7 @@
 package com.task.learning_and_development_service.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -11,7 +9,9 @@ import java.util.List;
 @Table(name = "course")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Course {
 
     @Id
@@ -21,8 +21,8 @@ public class Course {
     @Column(name = "course_name")
     private String name;
 
-    // add duration
-//    private -- duration
+    // add duration : take in hours
+    private Float duration;
 
     @OneToMany(mappedBy = "course")
     @Column(name = "enrollment_id")

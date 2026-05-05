@@ -11,6 +11,7 @@ public class UserMapper {
         return User.builder()
                 .username(userRequestDTO.getUsername())
                 .password(String.valueOf(userRequestDTO.getPassword()))
+                .name(userRequestDTO.getUsername())
                 .role(userRequestDTO.getRole())
                 .email(userRequestDTO.getEmail())
                 .build();
