@@ -3,9 +3,7 @@ package com.task.learning_and_development_service.model;
 import com.task.learning_and_development_service.enums.EmployeeStatus;
 import com.task.learning_and_development_service.enums.EnrolledStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,7 +11,9 @@ import java.util.List;
 @Table(name = "employee-details")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeDetails {
 
     @Id
@@ -33,9 +33,8 @@ public class EmployeeDetails {
     private List<Enrollment> enrollments;
 
     @OneToMany(mappedBy = "employeeDetails")
-    @Column(name = "assignment_id")
-    private List<Assignment> assignments;
-
+    @Column(name = "assignment_submission_id")
+    private List<AssignmentSubmission> assignmentSubmissions;
 
     @OneToOne
     @JoinColumn(name = "user_id")

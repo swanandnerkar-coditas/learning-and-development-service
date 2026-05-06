@@ -1,0 +1,8 @@
+package com.task.learning_and_development_service.service;
+
+import com.task.learning_and_development_service.dto.request.EnrollCourseRequestDTO;
+import jakarta.validation.Valid;
+
+public interface EnrollmentService {
+    String enrollCourse(@Valid EnrollCourseRequestDTO enrollCourseRequestDTO);
+}

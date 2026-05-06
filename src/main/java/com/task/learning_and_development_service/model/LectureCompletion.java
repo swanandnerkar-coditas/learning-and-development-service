@@ -21,7 +21,8 @@ public class LectureCompletion {
     private Course course;
 
     @ManyToOne
-    @JoinColumn(name = "employee_details_employee_id")
+    @JoinColumn(name = "employee_id")
+//    private User user;
     private EmployeeDetails employeeDetails;
 
     @OneToOne

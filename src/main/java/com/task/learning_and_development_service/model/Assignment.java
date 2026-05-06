@@ -18,18 +18,11 @@ public class Assignment {
     @Column(name = "assignment_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
+    @Column(name = "problem_statement", nullable = false)
+    private String problemStatement;
+
+    @OneToOne
+    @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_details_employee_id")
-    private EmployeeDetails employeeDetails;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "assignment_status")
-    private AssignmentStatus assignmentStatus;
-
-    @Column(name = "github_link", nullable = false)
-    private String gitHubLink;
 }

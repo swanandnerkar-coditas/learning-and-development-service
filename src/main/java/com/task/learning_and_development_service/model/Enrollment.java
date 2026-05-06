@@ -3,9 +3,7 @@ package com.task.learning_and_development_service.model;
 import com.task.learning_and_development_service.enums.AssignmentStatus;
 import com.task.learning_and_development_service.enums.CourseStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +11,9 @@ import java.time.LocalDateTime;
 @Table(name = "enrollment")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Enrollment {
 
     @Id
@@ -26,7 +26,8 @@ public class Enrollment {
     private Course course;
 
     @ManyToOne
-    @JoinColumn(name = "employee_details_employee_id")
+    @JoinColumn(name = "employee_id")
+//    private User user;
     private EmployeeDetails employeeDetails;
 
     @Column(name = "deadline")

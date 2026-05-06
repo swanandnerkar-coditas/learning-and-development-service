@@ -37,6 +37,9 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
+    @OneToOne(mappedBy = "user")
+    private EmployeeDetails employeeDetails;
+
 //    private Integer experience;
 //
 //    @CreatedDate

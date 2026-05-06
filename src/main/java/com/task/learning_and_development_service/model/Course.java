@@ -21,16 +21,15 @@ public class Course {
     @Column(name = "course_name")
     private String name;
 
-    // add duration : take in hours
-    private Float duration;
+    // add duration : take in hours ( float to int )
+    private Integer duration;
 
     @OneToMany(mappedBy = "course")
     @Column(name = "enrollment_id")
     private List<Enrollment> enrollments;
 
-    @OneToMany(mappedBy = "course")
-    @Column(name = "assignment_id")
-    private List<Assignment> assignments;
+    @OneToOne(mappedBy = "course")
+    private Assignment assignment;
 
     @OneToMany(mappedBy = "course")
     private List<Lecture> lectures;
