@@ -20,7 +20,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    @PostMapping("/create-course")
+    @PostMapping("/register-employee-details")
     ResponseEntity<ApplicationResponse<String>> registerEmployeeDetails(@Valid @RequestBody EmployeeRequestDTO employeeRequestDTO){
         ApplicationResponse<String> response = new ApplicationResponse<>(employeeService.registerEmployeeDetails(employeeRequestDTO));
         return new ResponseEntity<>(response, HttpStatus.CREATED);

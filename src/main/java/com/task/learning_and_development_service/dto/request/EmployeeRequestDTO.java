@@ -17,8 +17,8 @@ public class EmployeeRequestDTO {
     @Enumerated(EnumType.STRING)
     private EmployeeStatus employeeStatus;
 
-    @Enumerated(EnumType.STRING)
-    private EnrolledStatus enrolledStatus;
+//    @Enumerated(EnumType.STRING)
+//    private EnrolledStatus enrolledStatus;
 
     @NotNull
     private Long userId;

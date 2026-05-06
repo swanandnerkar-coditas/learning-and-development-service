@@ -29,9 +29,6 @@ public class CourseServiceImpl implements CourseService{
             List<Lecture> lectures = courseMapper.toLectures(courseRequestDTO, course);
             count = lectures.size();
             lectureRepository.saveAll(lectures);
-//            count = lectures.stream()
-//                        .map(lectureRepository::save)
-//                        .count();
 
         } catch (Exception e) {
             throw new RuntimeException(e);

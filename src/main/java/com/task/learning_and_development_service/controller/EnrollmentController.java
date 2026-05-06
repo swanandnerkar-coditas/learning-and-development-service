@@ -1,6 +1,5 @@
 package com.task.learning_and_development_service.controller;
 
-import com.task.learning_and_development_service.dto.request.AssignmentRequestDTO;
 import com.task.learning_and_development_service.dto.request.EnrollCourseRequestDTO;
 import com.task.learning_and_development_service.dto.response.ApplicationResponse;
 import com.task.learning_and_development_service.service.EnrollmentService;
@@ -20,10 +19,6 @@ public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
 
-    /*
-        Employee will enroll himself,
-        status change
-     */
     @PostMapping
     ResponseEntity<ApplicationResponse<String>> enrollCourse(@Valid @RequestBody EnrollCourseRequestDTO enrollCourseRequestDTO){
         ApplicationResponse<String> response = new ApplicationResponse<>(enrollmentService.enrollCourse(enrollCourseRequestDTO));

@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/admin/create-course").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/course/create-course").hasRole("ADMIN")
                         .anyRequest().permitAll()
                 )
 //                .addFilterBefore()

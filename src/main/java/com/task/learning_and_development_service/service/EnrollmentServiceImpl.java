@@ -2,6 +2,7 @@ package com.task.learning_and_development_service.service;
 
 import com.task.learning_and_development_service.dto.request.EnrollCourseRequestDTO;
 import com.task.learning_and_development_service.enums.CourseStatus;
+import com.task.learning_and_development_service.enums.EnrolledStatus;
 import com.task.learning_and_development_service.model.Course;
 import com.task.learning_and_development_service.model.EmployeeDetails;
 import com.task.learning_and_development_service.model.Enrollment;
@@ -41,8 +42,13 @@ public class EnrollmentServiceImpl implements EnrollmentService{
                     .course(course).employeeDetails(employeeDetails)
                     .deadline(LocalDateTime.now().plusDays(course.getDuration()))
                     .courseStatus(CourseStatus.PENDING)
+                    .numberOfLecturesCompleted(0)
                     .build();
 
+            if(employeeDetails.getEnrolledStatus() == EnrolledStatus.NOT_ENROLLED){
+                employeeDetails.setEnrolledStatus(EnrolledStatus.ENROLLED);
+                employeeDetailsRepository.save(employeeDetails);
+            }
             enrollmentRepository.save(enrollment);
 
         } catch (Exception e) {

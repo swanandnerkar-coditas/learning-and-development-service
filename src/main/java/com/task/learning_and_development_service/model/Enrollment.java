@@ -37,5 +37,6 @@ public class Enrollment {
     @Column(name = "course_status")
     private CourseStatus courseStatus;
 
-
+    @Column(name = "lectures_completed")
+    private Integer numberOfLecturesCompleted;
 }

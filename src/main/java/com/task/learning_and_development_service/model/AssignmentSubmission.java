@@ -2,15 +2,15 @@ package com.task.learning_and_development_service.model;
 
 import com.task.learning_and_development_service.enums.AssignmentStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "assignment-submission")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class AssignmentSubmission {
 
     @Id
